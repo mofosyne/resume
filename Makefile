@@ -6,8 +6,6 @@ LATEX_TEMPLATE=./pandoc-templates/default.latex
 
 BUILD_FOLDER=build
 
-PANDOCARGS_HTML=--self-contained
-
 # main makefile routines
 
 all:    clean $(PDFS) $(HTML)
