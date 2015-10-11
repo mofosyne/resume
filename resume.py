@@ -131,7 +131,7 @@ def html(lines, contact_lines, *args):
     for line in contact_lines:
         if '@' in line and '--no-gravatar' not in args:
             gravatar = GRAVATAR.format(
-                hash=hashlib.md5(line.lower().strip('<>')).hexdigest())
+                hash=hashlib.md5(line.lower().strip('<>').encode('utf-8')).hexdigest())
             break
     if gravatar is not None:
         contact_lines.insert(0, "<img src='{}' />".format(gravatar))
