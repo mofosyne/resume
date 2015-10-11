@@ -6,6 +6,7 @@ LATEX_TEMPLATE=./pandoc-templates/default.latex
 
 BUILD_FOLDER=build
 
+PANDOCARGS_HTML=--self-contained
 
 # main makefile routines
 
@@ -15,7 +16,7 @@ pdf:   clean $(PDFS)
 html:  clean $(HTML)
 
 %.html: %.md
-	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc -t html -c resume.css -o ./$(BUILD_FOLDER)/$@
+	python resume.py html $(GRAVATAR_OPTION) < $< | pandoc $(PANDOCARGS_HTML) -t html -c resume.css -o ./$(BUILD_FOLDER)/$@
 
 %.pdf:  %.md $(LATEX_TEMPLATE)
 	python resume.py tex < $< | pandoc $(PANDOCARGS) --template=$(LATEX_TEMPLATE) -H header.tex -o ./$(BUILD_FOLDER)/$@
