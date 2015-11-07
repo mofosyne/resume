@@ -3,6 +3,7 @@ Markdown Resumé
 
 [Markdown](https://raw.github.com/mwhite/resume/master/resume.md) -> [PDF](https://raw.github.com/mwhite/resume/master/resume.pdf), [HTML](http://mwhite.github.com/resume), and more
 <http://github.com/mwhite/resume>
+![QR](qr.png)
 
 Interests
 ---------
